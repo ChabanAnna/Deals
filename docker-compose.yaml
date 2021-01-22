@@ -1,0 +1,19 @@
+version: "3"
+
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+        POSTGRES_PASSWORD: mypwdfordeals
+    ports:
+      - 5432:5433
+  deals:
+    build: .
+    restart: always
+    environment:
+      - POSTGRESQL_ADDR=postgresql
+    depends_on:
+      db:
+        condition: service_healthy
