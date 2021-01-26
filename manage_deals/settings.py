@@ -25,7 +25,7 @@ SECRET_KEY = 'i9vto%_*pb@-6x298!)8%(zqxl#_!m$io^pf(6=%^wxf7u3&0_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,10 +82,9 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'mypwdfordeals',
         'HOST': '0.0.0.0',
-        'PORT': '5433',
+        'PORT': 5432,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

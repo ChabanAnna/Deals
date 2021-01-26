@@ -1,3 +1,6 @@
 #!/bin/bash
 
-exec gunicorn --bind=0.0.0.0:8080 --workers=1 wsgi:app
+exec python manage.py makemigrations
+exec python manage.py migrate
+exec python manage.py createsuperuser --username USER1 --email 'anya.starovoytova@inbox.ru' --noinput
+exec python manage.py runserver
